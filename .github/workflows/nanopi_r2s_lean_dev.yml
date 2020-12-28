@@ -1,4 +1,4 @@
-# Last Update 2020-12-27 by NanoHua
+# Last Update 2020-12-28 by NanoHua
 name: nanopi_r2s_lean_dev
 
 on:
@@ -65,7 +65,7 @@ jobs:
         id: assemble_artifact
         run: |
           . x_assemble_artifact.sh
-          release_tag="R2S-Lean-$(date +%Y-%m-%d)-Dev"
+          release_tag="R2S-Lean-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
           
       - name: Create Release
