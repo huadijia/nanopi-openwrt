@@ -18,8 +18,8 @@ rm -rf luci-theme-argon/ && git clone -b 18.06 https://github.com/jerrykuku/luci
 rm -rf v2ray/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray
 rm -rf v2ray-plugin/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray-plugin
 rm -rf trojan/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/trojan
-rm -rf xray/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/xray
-rm -rf luci-app-jd-dailybonus/ && git clone https://github.com/jerrykuku/luci-app-jd-dailybonus
+# rm -rf xray/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/xray
+# rm -rf luci-app-jd-dailybonus/ && git clone https://github.com/jerrykuku/luci-app-jd-dailybonus
 cd ../../
 
 
