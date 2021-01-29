@@ -19,7 +19,7 @@ rm -rf v2ray/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/
 rm -rf v2ray-plugin/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/v2ray-plugin
 rm -rf trojan/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/trojan
 # rm -rf xray/ && svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/xray
-# rm -rf luci-app-jd-dailybonus/ && git clone https://github.com/jerrykuku/luci-app-jd-dailybonus
+rm -rf luci-app-jd-dailybonus/ && git clone https://github.com/jerrykuku/luci-app-jd-dailybonus
 cd ../../
 
 
