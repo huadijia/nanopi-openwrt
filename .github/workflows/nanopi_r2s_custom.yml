@@ -1,4 +1,4 @@
-# Last Update 2021-02-16 by NanoHua
+# Last Update 2021-02-20 by NanoHua
 name: nanopi_r2s_custom
 
 on:
@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     if: github.repository == 'huadijia/nanopi-openwrt'
 
     steps:
