@@ -50,6 +50,7 @@ jobs:
           cd lede/
           git clone --depth=1 https://github.com/destan19/OpenAppFilter.git && rm -rf package/OpenAppFilter && mv OpenAppFilter package/
           git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git && rm -rf package/lean/luci-theme-argon && mv luci-theme-argon package/lean/
+          git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus.git && rm -rf package/lean/luci-app-jd-dailybonus && mv luci-app-jd-dailybonus package/lean/
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
