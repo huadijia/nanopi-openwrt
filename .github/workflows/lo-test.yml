@@ -142,17 +142,17 @@ jobs:
           overwrite: true
           prerelease: true
 
-      - name: Debug via tmate
-        uses: P3TERX/ssh2actions@main
-        if: ${{ failure() }}
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      # - name: Debug via tmate
+        # uses: P3TERX/ssh2actions@main
+        # if: ${{ failure() }}
+        # env:
+          # TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          # TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: Send tg notification
-        uses: appleboy/telegram-action@master
-        #if: always()
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          args: The ${{ github.event.client_payload.device }} build ran completed at ${{ job.status }}.
+      # - name: Send tg notification
+        # uses: appleboy/telegram-action@master
+        # if: always()
+        # with:
+          # to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          # args: The ${{ github.event.client_payload.device }} build ran completed at ${{ job.status }}.
