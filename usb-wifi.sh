@@ -1,37 +1,47 @@
 #!/bin/sh
 
-uci delete wireless.radio0
-uci delete wireless.default_radio0
+display_usage() {
+	echo "USB网卡WIFI设置"
+	echo -e "\nUsage: $0 AP名称 密码\n"
+	echo -e "\n例如: $0 OpenWrt 12345678\n"
+}
+# if less than two arguments supplied, display usage
+if [  $# -le 1 ]
+then
+	display_usage
+	exit 1
+fi
+# check whether user had supplied -h or --help . If yes display usage
+if [[ "$1" == "--help" || "$1" == "-h" ]]
+then
+	display_usage
+	exit 0
+fi
+
+rm -f /etc/config/wireless
+wifi config
+
+uci batch <<EOF
+set wireless.radio0.hwmode='11a'
+set wireless.radio0.country='US'
+set wireless.radio0.channel='40'
+set wireless.radio0.legacy_rates='1'
+set wireless.radio0.mu_beamformer='1'
+set wireless.radio0.htmode='HT40'
+set wireless.default_radio0.device='radio0'
+set wireless.default_radio0.network='lan'
+set wireless.default_radio0.mode='ap'
+set wireless.default_radio0.ssid=$1
+set wireless.default_radio0.disassoc_low_ack='0'
+set wireless.default_radio0.encryption='psk2+tkip+ccmp'
+set wireless.default_radio0.key=$2
+set wireless.default_radio0.wps_pushbutton='0'
+EOF
 uci commit wireless
 
-echo "package wireless
-
-config wifi-device 'radio0'
-	option type 'mac80211'
-	option hwmode '11a'
-	option path 'platform/ff5c0000.usb/usb1/1-1/1-1:1.0'
-	option country 'US'
-	option channel '40'
-	option legacy_rates '1'
-	option mu_beamformer '1'
-	option htmode 'HT40'
-
-config wifi-iface 'default_radio0'
-	option device 'radio0'
-	option network 'lan'
-	option mode 'ap'
-	option ssid 'Owrt'
-	option disassoc_low_ack '0'
-	option encryption 'psk2+tkip+ccmp'
-	option key 'password'
-	option wps_pushbutton '0'
-
-" | uci import
-uci commit wireless
-
-read -r -p "Reboot now? [Y/n] " response
+read -r -p "需要重启，现在执行? [Y/n] " response
 case "$response" in
-	[yY][eE][sS]|[yY]) 
+	[yY][eE][sS]|[yY])
 		reboot
 		;;
 	*)
