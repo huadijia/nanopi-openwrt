@@ -24,6 +24,7 @@
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git && rm -rf package/lean/luci-theme-argon && mv luci-theme-argon package/lean/
 git clone --depth=1 https://github.com/apollo-ng/luci-theme-darkmatter.git && rm -rf package/lean/luci-theme-darkmatter && mv luci-theme-darkmatter package/lean/
 git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus.git && rm -rf package/lean/luci-app-jd-dailybonus && mv luci-app-jd-dailybonus package/lean/
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt.git && rm -rf package/lean/ddnsto-openwrt && mv ddnsto-openwrt package/lean/
 
 
 if [ $DEVICE = 'r2s' ]; then

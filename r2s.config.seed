@@ -85,3 +85,5 @@ CONFIG_DRIVER_11W_SUPPORT=y
 CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_luci-app-jd-dailybonus=y
 CONFIG_PACKAGE_luci-theme-darkmatter=y
+CONFIG_PACKAGE_ddnsto=y
+CONFIG_PACKAGE_luci-app-ddnsto=y
